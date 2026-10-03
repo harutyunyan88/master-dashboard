@@ -1,0 +1,6 @@
+.venv
+node_modules
+.env
+altegio_sample.json
+backend/tests
+scripts/check_altegio.py

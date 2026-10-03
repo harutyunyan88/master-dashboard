@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #140c26;
+  --color-surface: #221640;
+  --color-surface-2: #2d1d55;
+  --color-line: #3a2868;
+  --color-accent: #7c3aed;
+  --color-accent-soft: #a78bfa;
+  --color-ink: #ece6ff;
+  --color-muted: #a99cc9;
+  --font-sans: 'Inter Variable', 'Noto Sans Armenian', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html {
+  color-scheme: dark;
+  background: var(--color-bg);
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(120% 50% at 50% -10%, #3b1f7a 0%, transparent 60%),
+    var(--color-bg);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(0.75) sepia(1) hue-rotate(220deg) saturate(3);
+  cursor: pointer;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface) 0%, var(--color-surface-2) 50%, var(--color-surface) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
